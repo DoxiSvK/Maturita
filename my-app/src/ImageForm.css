@@ -1,0 +1,197 @@
+/* Add a container for page name and circle */
+.page-name-containerF {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+}
+
+.page-nameF {
+    font-size: 34px;
+    font-weight: bold;
+    color: #ffffffd8;
+}
+
+.circle-behind-tF {
+    width: 6px;
+    height: 6px;
+    margin-left: 0px; /* Adjust the margin as needed */
+    margin-top: -20px; /* Adjust the margin-top to move the circle up */
+    background-color: rgb(56, 122, 221); /* Change the background color as needed */
+    border-radius: 50%;
+}
+
+/* Styles specific to ImageUploadForm component */
+.image-upload-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 104vh;
+    position: relative;
+}
+
+.image-upload-form-container .carousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.image-upload-form-container .carousel-image {
+    height: 100%;
+    width: 100%;
+}
+
+.image-upload-form {
+    background-color: rgba(255, 255, 255, 0.836);
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 700px;
+  max-height: 880px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-upload-form label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    width: 200px;
+    text-align: left;
+}
+
+.image-upload-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+    height: 100px; /* Fixed height for description input */
+    resize: none; /* Disable textarea resizing */
+    overflow-y: auto;
+    position: relative;
+    scroll-behavior: smooth; /* optional: adds smooth scrolling */
+}
+
+.image-upload-form input,
+.image-upload-form button {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+
+.image-upload-form .file-input-button {
+    position: relative;
+    width: 400px;
+    padding: 10px;
+    padding-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    box-sizing: border-box;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #e7e7e7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: border-radius 0.5s ease;
+}
+.image-upload-form .file-input-button:hover {
+    background-color: #e4e4e4;
+    border-radius: 155px;
+    transition: background-color 0.3s ease;
+    transition: border-radius 1.5s ease;
+}
+.image-upload-form .file-input-button i {
+    font-size: 36px;
+    margin-bottom: 8px;
+}
+
+.image-upload-form input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.image-upload-form img {
+    border-radius: 5%;
+    max-width: 100%;
+    max-height: 200px;
+    margin: 10px auto;
+    display: block;
+}
+
+.image-upload-form button {
+    background-color: rgba(56, 122, 221, 0.705);
+    color: #ffffff;
+    padding: 15px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.image-upload-form button:hover {
+    background-color: rgb(56, 122, 221);
+    color: white;
+}
+
+.image-upload-form button.back-button {
+    background-color: rgba(85, 85, 85, 0.705);
+    color: #ffffff;
+    padding: 15px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.image-upload-form button.back-button:hover {
+    background-color: rgb(1, 5, 12);
+    color: white;
+}
+
+/* Hide the default scrollbar */
+.image-upload-form textarea::-webkit-scrollbar {
+    width: .5em;
+}
+
+/* Style for the custom scroll indicator */
+.image-upload-form textarea::-webkit-scrollbar-thumb {
+    background-color: rgb(56, 122, 221);
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+/* Style for the custom scroll indicator when at the top */
+.image-upload-form textarea::-webkit-scrollbar-thumb:active,
+.image-upload-form textarea::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(1, 5, 12, 0.377);
+}
+
+/* Style for the custom scroll indicator when at the bottom */
+.image-upload-form textarea::-webkit-scrollbar-track {
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+}

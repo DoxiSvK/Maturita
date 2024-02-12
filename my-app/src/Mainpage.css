@@ -1,0 +1,439 @@
+
+:root {
+    --overlay-padding: 10px;
+    --overlay-text-color: white;
+    --text-size: 28px;
+    --icon-size: 40px;
+    --text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    --likes-background: rgba(0, 0, 0, 0.5);
+    --sorting-option-color: rgba(0, 0, 0, 0.562);
+    --sorting-option-hover-color: rgb(56, 122, 221);
+}
+
+.header {
+    background-color: rgb(255, 255, 255);
+    height: 100px;
+}
+
+/* Add a container for page name and circle */
+.page-name-container {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+}
+
+.page-name {
+    font-size: 34px;
+    font-weight: bold;
+    color: #69696956;
+}
+
+.circle-behind-t {
+    width: 6px;
+    height: 6px;
+    margin-left: 0px; /* Adjust the margin as needed */
+    margin-top: -20px; /* Adjust the margin-top to move the circle up */
+    background-color: rgb(56, 122, 221); /* Change the background color as needed */
+    border-radius: 50%;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
+    grid-gap: 0;
+    padding: 0;
+    margin: -620px 0 0;
+    width: 100%;
+    position: relative;
+    top: 66.66vh;
+}
+
+.grid-item {
+    width: 100%;
+    padding-bottom: 75%;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.grid-item:hover img {
+    filter: brightness(70%);
+}
+
+.grid-item img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: filter 0.3s ease;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.815);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: var(--overlay-padding);
+}
+
+.Name-selection {
+    position: absolute;
+    bottom: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 120px 0;
+}
+
+.overlay .Name-selection p {
+    font-size: 28px; /* Adjust the font size as needed */
+    color: rgba(71, 71, 71, 0.815); /* Set the color of the text */
+    /* Add any additional styling you want for the name */
+}
+
+
+
+.author-section {
+    position: absolute;
+    bottom: -15px;
+    left: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin: 0 10px 10px 0;
+}
+
+.grid-item:hover .overlay {
+    opacity: 1;
+}
+
+.overlay p {
+    font-size: 14px; /* Adjust the font size as needed */
+    color: rgba(71, 71, 71, 0.514);
+    text-shadow: var(--text-shadow);
+}
+
+.likes-section {
+    position: absolute;
+    bottom: 20px;
+    right: 40px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin: 0 10px 10px 0;
+}
+
+.likes-section .like-icon,
+.likes-section .likes {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.grid-item:hover .likes-section .like-icon,
+.grid-item:hover .likes-section .likes {
+    display: block;
+}
+.like-iconC {
+    left: calc(50% - 15px);
+    background-color: rgba(0, 0, 0, 0);
+    width: calc(var(--text-size) );
+    height: calc(var(--text-size) );
+    transition: filter 0.3s ease;
+}
+
+.likes-section .like-icon {
+    left: calc(50% - 15px);
+    background-color: rgba(0, 0, 0, 0);
+    width: calc(var(--text-size) * 1.25);
+    height: calc(var(--text-size) * 1.25);
+    filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(0%);
+    transition: filter 0.3s ease;
+}
+
+.likes-section .like-icon:hover {
+    filter: none; /* Change back to normal on hover */
+}
+
+.likes-section .likes {
+    left: calc(50% + 15px);
+}
+
+.likes-section .likes-count {
+    width: var(--text-size);
+    height: var(--text-size);
+    cursor: pointer;
+}
+
+.sorting-optionsS{
+    position: absolute;
+    top: 987px;
+}
+
+.sorting-options {
+    display: flex;
+    justify-content: right;
+    position: relative;
+    top: 8px; /* Adjust the top value as needed */
+}
+
+.sorting-option {
+    color: var(--sorting-option-color);
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    padding: 0 0px;
+}
+.sorting-option:hover,
+.sorting-option.active {
+    color: var(--sorting-option-hover-color);
+}
+/* Add styling for Register and Login links similar to sorting options */
+.register-login-options {
+    display: flex;
+    justify-content: right;
+    margin-top: 30px;
+    position: absolute;
+    left: 150px;
+    top: 8px;
+}
+
+.register-login-option {
+    color: var(--sorting-option-color);
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none; /* Remove underlining */
+    transition: color 0.3s ease;
+    padding: 0 15px; /* Adjust padding to match sorting options */
+}
+
+.register-login-option:hover {
+    color: var(--sorting-option-hover-color);
+}
+
+.add-image-button {
+    background-color: rgba(56, 122, 221, 0.705); 
+    position: absolute;
+    left: 20px;
+    top: 19px;
+    color: #ffffff; /* White text color */
+    padding: 15px 20px; /* Padding around text */
+    font-size: 18px; /* Font size */
+    border: none; /* Remove border */
+    border-radius: 100px; /* Add border radius */
+    cursor: pointer; /* Add cursor pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.logout {
+    display: flex;
+    justify-content: right;
+    margin-top: 10px;
+    position: absolute;
+    left: 150px;
+    color: var(--sorting-option-color);
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none; /* Remove underlining */
+    transition: color 0.3s ease;
+    padding: 0 15px; /* Adjust padding to match sorting options */
+}
+.welcome{
+    display: flex;
+    justify-content: center;
+    margin-top: 3px;
+    position: center;
+    color: var(--sorting-option-color);
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none; /* Remove underlining */
+    transition: color 0.3s ease;
+    padding: 0 15px;
+}
+.logout:hover{
+    color: rgb(207, 1, 1);
+    transition: color 0.3s ease;
+}
+
+.add-video-button {
+    background-color: rgba(56, 122, 221, 0.705); 
+    position: relative; /* Change to relative */
+    float: right; /* Float it to the right */
+    margin-right: 20px;
+    margin-bottom: 75px;
+    color: #ffffff; /* White text color */
+    padding: 15px 20px; /* Padding around text */
+    font-size: 18px; /* Font size */
+    border: none; /* Remove border */
+    border-radius: 100px; /* Add border radius */
+    cursor: pointer; /* Add cursor pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+@media (max-width: 600px) {
+    .add-video-button {
+        float: none; /* Clear the float on smaller screens */
+        margin: 20px auto; /* Center the button horizontally */
+        display: block; /* Change to block to occupy full width */
+    }
+}
+
+.add-image-button:hover {
+    background-color: rgb(56, 122, 221); /* Darker green on hover */
+    color: white;
+}
+
+.search-bar-container {
+    position: absolute;
+    right: 250px;
+    top: 24px;
+    width: 100px;
+    height: 120px;
+}
+
+
+.add-video-button:hover {
+    background-color: rgb(56, 122, 221); /* Darker blue on hover */
+    color: white;
+}
+
+.search-bar {
+    width: 300px;
+    padding: 10px 15px 8px 25px; /* Adjust the left padding as needed */
+    font-size: 16px;
+    font-family: "Roboto", sans-serif; /* Add the desired font-family */
+    color: rgba(80, 80, 80, 0.815); /* Change font color to black */
+    border: 2px solid #ffffff00;
+    border-radius: 50px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    background-color: rgba(102, 102, 102, 0.226);
+}
+
+.search-bar:focus {
+    border-color: #034994; /* Change border color on focus */
+}
+
+.search-icon {
+    position: absolute;
+    left: 255px;
+    top: 10px;
+    padding: 0px;
+    background-color: #ffffff00; /* Icon background color */
+    border: none; /* Remove icon border */
+    color: rgb(255, 255, 255); /* Icon color */
+    border-radius: 100px;
+    cursor: pointer; /* Add cursor pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+
+
+.footer {
+    background-color: rgba(0, 0, 0, 0.623); /* Transparent black background */
+    padding: 10px; /* Slimmer padding */
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.scroll-to-bottom-link {
+    cursor: pointer;
+    text-decoration: none;
+    color: #ffffff; /* White text color */
+    display: inline-block;
+    border-radius: 50%; /* Make it circular */
+    padding: 8px 16px; /* Adjust padding as needed */
+    border: 2px solid #ffffff00; /* White border around the circle */
+    transition: border 0.3s ease; /* Smooth transition for background color */
+}
+
+.scroll-to-bottom-link:hover {
+    border: 2px solid #ffffff71; /* White border around the circle */
+}
+
+/* Add a downward arrow icon */
+.scroll-to-bottom-link span::after {
+    content: " ↓"; /* Unicode character for a downward arrow */
+}
+
+.last-element {
+    margin-bottom: 650px; /* Adjust the margin-bottom value as needed */
+  }
+
+
+  
+/* Responsive design adjustments */
+@media (max-width: 1200px) {
+    .grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(33.33%, 1fr));
+    }
+}
+
+@media (max-width: 900px) {
+    .grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    }
+
+    h2 {
+        margin-left: 5%;
+    }
+
+    div[style^="margin-right"] {
+        margin-right: 5%;
+        text-align: left;
+        margin-top: 10px;
+    }
+
+    button {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    h2,
+    div[style^="margin-right"] {
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+
+
+::-webkit-scrollbar {
+    width: 5px; /* Width of the scrollbar (adjust as needed) */
+    height: 5px; /* Height of the scrollbar (adjust as needed) */
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent; /* Make the track transparent */
+}
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgba(83, 83, 83, 0.267); 
+    border-radius: 10px;
+    width: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(56, 122, 221);
+    width: 10px;
+  }

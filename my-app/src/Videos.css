@@ -1,0 +1,170 @@
+.page-name-containerVI {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    z-index: 2;
+  }
+  
+  .page-nameVI {
+    font-size: 34px;
+    font-weight: bold;
+    color: #69696956;
+  }
+  
+  .circle-behind-tVI {
+    width: 6px;
+    height: 6px;
+    margin-left: 0px;
+    margin-top: -20px;
+    background-color: rgb(56, 122, 221);
+    border-radius: 50%;
+  }
+  
+  .title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    margin-top: 100px;
+    z-index: 2;
+    margin-bottom: 10px;
+  }
+  
+  .title-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .description-text {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.5;
+  }
+  
+  .videos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px;
+    margin-top: 10px;
+    z-index: 1;
+  }
+  
+  .video-card {
+    position: relative;
+    width: 300px;
+    border: 1px solid rgba(56, 122, 221, 0.253);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: width 0.3s ease, height 0.3s ease;
+  }
+  
+  .video-card iframe {
+    width: 100%;
+    height: 200px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .video-card.selected {
+    width: 800px;
+    height: 450px;
+  }
+  
+  .video-card.selected iframe {
+    height: 100%;
+  }
+  
+  .video-card::after {
+    content: "Click for Bigger";
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: #fff;
+    background-color: rgba(56, 122, 221, 0.705);
+    padding: 5px 10px;
+    border-radius: 4px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  .video-card.selected::after {
+    content: "Click for Smaller";
+  }
+  
+  .video-card:hover::after {
+    opacity: 1;
+    background-color: rgb(56, 122, 221);
+  }
+  
+  .video-info {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .video-info h3 {
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  .video-info p {
+    font-size: 14px;
+    color: #777;
+    margin: 8px 0;
+  }
+  
+  .click-for-bigger {
+    display: block;
+    margin-top: 10px;
+    font-size: 12px;
+    color: rgba(255, 0, 0, 0);
+    background-color: rgba(240, 7, 7, 0);
+    padding: 3px 3px;
+    border-radius: 0px;
+    width: 1px;
+    height: 30px;
+    opacity: 0;
+    transition: opacity 1.3s ease, background-color 1.3s ease;
+  }
+  
+  .video-card.selected .click-for-bigger {
+    display: none;
+  }
+  
+  .video-card:hover .click-for-bigger {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0);
+  }
+  
+  .button-homeVI {
+    background-color: rgba(56, 122, 221, 0.705);
+    color: #ffffff;
+    padding: 25px 45px;
+    font-size: 25px;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    margin-top: 10px;
+    display: block;
+    margin: 20px auto;
+    text-decoration: none;
+  }
+  
+  .button-homeVI:hover {
+    background-color: rgb(56, 122, 221);
+    color: white;
+  }
+  

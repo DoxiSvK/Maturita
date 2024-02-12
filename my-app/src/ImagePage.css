@@ -1,0 +1,172 @@
+/* Style for the entire page */
+.image-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 1); /* Set background color to black */
+}
+
+/* Add a container for page name and circle */
+.page-name-containerI {
+  position: absolute;
+  top: 30px;
+  left: 72%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+}
+
+.page-nameI {
+  font-size: 34px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.circle-behind-tI {
+  width: 6px;
+  height: 6px;
+  margin-left: 0px; /* Adjust the margin as needed */
+  margin-top: -20px; /* Adjust the margin-top to move the circle up */
+  background-color: rgb(56, 122, 221); /* Change the background color as needed */
+  border-radius: 50%;
+}
+
+
+/* Image container styles */
+.image-container {
+  width: 100%;
+  max-width: 882px;
+  overflow-x: hidden;
+}
+
+/* Image styles */
+.image-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Info container styles */
+.info-container {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: rgba(255, 255, 255, 0.8); /* Adjust alpha value for transparency */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Info section styles */
+.info-container h2,
+.info-container p {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+/* Description section styles with custom scroll indicator */
+.description-container {
+  width: 700px;
+  max-height: 200px;
+  overflow-y: auto;
+  position: relative;
+  scroll-behavior: smooth; /* optional: adds smooth scrolling */
+}
+
+/* Hide the default scrollbar */
+.description-container::-webkit-scrollbar {
+  width: .5em;
+}
+
+/* Style for the custom scroll indicator */
+.description-container::-webkit-scrollbar-thumb {
+  background-color: rgb(56, 122, 221);
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+/* Style for the custom scroll indicator when at the top */
+.description-container::-webkit-scrollbar-thumb:active,
+.description-container::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(1, 5, 12, 0.377);
+}
+
+/* Style for the custom scroll indicator when at the bottom */
+.description-container .bottom-indicator {
+  width: 100%;
+  height: 5px; /* Adjust the height of the bottom indicator */
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+  border-radius: 10px;
+  transition: background 0.3s ease;
+  z-index: 1; /* Ensure the indicator is above the content */
+}
+
+/* Adjust the bottom indicator when at the bottom */
+.description-container.bottom-indicator:after {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+}
+
+/* Likes section styles */
+.likes-section-page {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-left: 0px;
+}
+
+.like-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+  transition: filter 0.3s ease;
+}
+
+.like-icon:hover,
+.like-icon.hovered {
+  filter: brightness(70%);
+}
+
+.likes {
+  margin: 0;
+}
+
+/* Download and back button styles */
+.download-button {
+  background-color: rgba(56, 122, 221, 0.705);
+  color: #ffffff;
+  padding: 15px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.back-button {
+  background-color: rgba(85, 85, 85, 0.705);
+  color: #ffffff;
+  padding: 15px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.download-button:hover {
+  background-color: rgb(56, 122, 221);
+  color: white;
+}
+
+.back-button:hover {
+  background-color: rgb(1, 5, 12);
+  color: white;
+}
